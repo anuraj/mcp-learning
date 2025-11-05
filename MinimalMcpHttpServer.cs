@@ -11,7 +11,9 @@ builder.Services.AddHttpClient();
 
 builder.Services.AddMcpServer()
     .WithHttpTransport()
-    .WithTools<Tools>();
+    .WithTools<Tools>()
+    .WithPrompts<Prompts>()
+    .WithResources<Resources>();
 
 var app = builder.Build();
 
@@ -22,11 +24,9 @@ app.Run("http://localhost:5000");
 [McpServerToolType]
 public class Tools
 {
-    private readonly ILogger<Tools> _logger;
     private readonly IHttpClientFactory _httpClientFactory;
-    public Tools(ILogger<Tools> logger, IHttpClientFactory httpClientFactory)
+    public Tools(IHttpClientFactory httpClientFactory)
     {
-        _logger = logger;
         _httpClientFactory = httpClientFactory;
     }
     
@@ -46,5 +46,28 @@ public class Tools
         {
             return $"Error fetching weather data: {ex.Message}";
         }
+    }
+}
+
+[McpServerPromptType]
+public class Prompts
+{
+    [McpServerPrompt(Name = "WeatherForecastPrompt", Title = "Get Weather Forecast")]
+    [Description("Provides a prompt to get the weather forecast for a specified city.")]
+    public string WeatherPrompt(
+        [Description("Name of the city to get the weather forecast")] string city)
+    {
+        return $"Get the weather forecast for the {city}.";
+    }
+}
+
+[McpServerResourceType]
+public class Resources
+{
+    [McpServerResource(Name = "DefaultCity", Title = "Default City", UriTemplate = "/default-city")]
+    [Description("A sample resource providing a default city name.")]
+    public string DefaultCity()
+    {
+        return "San Francisco";
     }
 }
