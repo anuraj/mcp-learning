@@ -46,7 +46,7 @@ The STDIO server can be configured in VS Code using the `.vscode/mcp.json` confi
 }
 ```
 
-## How it works
+## 📝 How it works
 
 ![GitHub Copilot using MCP Tool](github_copilot.png)
 
@@ -64,13 +64,6 @@ The STDIO server can be configured in VS Code using the `.vscode/mcp.json` confi
 The repository includes:
 - `.vscode/mcp.json` - VS Code MCP server configuration
 - `.devcontainer/` - Development container configuration (if using Dev Containers)
-
-## 📝 Notes
-
-- C# scripts use `#:` directives for SDK and package references
-- The HTTP server uses ASP.NET Core infrastructure
-- The STDIO server logs to standard error to avoid interfering with MCP communication
-- Both implementations use preview versions of the ModelContextProtocol packages
 
 ## 🤝 Contributing
 
