@@ -46,6 +46,10 @@ The STDIO server can be configured in VS Code using the `.vscode/mcp.json` confi
 }
 ```
 
+## How it works
+
+![GitHub Copilot using MCP Tool](github_copilot.png)
+
 ## 📚 Key Concepts
 
 - **MCP (Model Context Protocol)**: A protocol for exposing tools and resources to AI assistants
@@ -72,6 +76,5 @@ The repository includes:
 
 This is a learning repository. Feel free to experiment with:
 - Adding new tools
-- Trying different transport mechanisms
 - Implementing prompts and resources
 - Exploring advanced MCP features
