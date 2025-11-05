@@ -23,29 +23,14 @@ This repository showcases two different MCP server implementations:
 - Uses `ModelContextProtocol` package (v0.4.0-preview.3)
 - Communicates via standard input/output
 - **Tools included:**
-  - `Echo` - Returns a greeting message with the provided input
-  - `GenerateRandomNumber` - Generates a random number between specified min and max values
+  - `GetWeatherForecast` - Fetches weather data for a specified city from wttr.in API
 
 ## 📦 Requirements
 
 - .NET SDK (compatible with .NET 10.0-rc.2 or later)
-- VS Code with MCP extension (optional, for STDIO server testing)
+- VS Code
 
 ## 🛠️ Usage
-
-### Running the HTTP Server
-
-```bash
-dotnet run MinimalMcpHttpServer.cs
-```
-
-The server will start on `http://localhost:5000` and expose MCP tools via HTTP.
-
-### Running the STDIO Server
-
-```bash
-dotnet run MinimalMcpStdioServer.cs
-```
 
 The STDIO server can be configured in VS Code using the `.vscode/mcp.json` configuration file:
 
