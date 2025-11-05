@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"minimal-mcp-server": {
+			"type": "stdio",
+			"command": "dotnet",
+			"args": [
+				"run",
+				"./MinimalMcpStdioServer.cs"
+			]
+		},
+	},
+	"inputs": []
+}
